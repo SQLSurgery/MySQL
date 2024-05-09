@@ -1,0 +1,12 @@
+--Linux Commands
+    df-h 
+        - displays disk space information 
+    free-rm 
+        - displays memory information 
+    pidof 
+        - displays process id
+    vi 
+        - creates file
+    wq
+        - write and quit
+    
