@@ -1,0 +1,14 @@
+MySQL Installation 
+
+-- Select the latest stable release
+-- Older releases remain available
+-- Development releases are also available
+
+-- Use the appropiate binary release for the target operating system 
+    - Source release are also available
+
+--Linux is prefered platform for MySQL database
+
+--MySQL Community Server is free 
+
+
