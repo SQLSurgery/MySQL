@@ -1,0 +1,108 @@
+Architecture and Internal Structures
+
+MySQL is unique database management system as allows different storage engine to support different applications 
+- Plugagable storage engine architecture 
+- Mix storage engines in single application (Allows customisation for applications)
+- Two most common storage engines 
+    - InnoDB
+    - MyISAM 
+    - Others: Memory, Cluster, CSV
+
+Runs on following operating systems:
+- Linux, Solaris, or Windows operating systems.  
+
+Provides consistent interface (API) for different storage engines
+- Abstracts the details of data storage and manage data. 
+
+Birds eye (high level) view of Architecture 
+
+?
+1. Connection Manager/Thread Manager/Authentication Manager
+----------------------------------------------------------
+     -- Authentication ensures security for any attempted connections to ensure user and password are authenticated to the MySQL databases
+     -- Local Client Connections or Remote Client Connection can be remote connection to the MySQL database 
+     -- Dispatch and Scheduling Ensures there's a thread for the connection on which the connection can be acomplished. 
+
+Note
+    - Each connection to the MySQL database is executed on a seperate thread
+    - Each thread is dynamically allocated resources for query execution and can be administered by DBA:
+        - Read_Buffer
+        - Sort_Buffer
+        - Temp_Table
+
+Any programs using ODBC, JDBC, or PHP can connect to the MySQL Daatabase
+    - Several administrative tools can also connect
+    - All remote connections are over TCP/IP
+    - Local connections can be TCP/IP, Unix Sockets, Shared Memory, NT Pipes
+
+
+2.Parser
+---------
+The Parser has several components that comprise this parse function:
+
+Query Parsing and Authorisation 
+- Parse the query to check the SQL Statement is legal sql statement that keywords are correct and arguement are correctly specficed. Following, checks if the query has authority/permissions to access the resources that it needs to execute the query. 
+
+Query Rewrite 
+- Query maybe rewritten based on query optimiser and outcome of parsing function. 
+- 
+Query Optimiser
+- Examine statistics and all possible way to access the data and estbalish best path to access the data. 
+- Builds query tree and query plan to execute the query.  
+
+Plan Executor 
+- Exectues the query plan, query tree returning the data to user. 
+
+DDL and Utility Processing 
+- Executes data defition language and other utility processing. 
+
+
+3.Storage Engine
+--------------
+- Lock Manager this protects the data for consistency of data when multiple user connected to the database
+- Buffer Manager this is responsible for moving data from disk to memory
+- Log Manager this is responsible for durability for any changes to data 
+- Access Methods 
+
+
+
+Storage engine selection
+---------------------
+
+The selection of a storage engine is depedent on the requirements of application 
+    - Is the application transactional
+        - Innodb
+    - What lock granularity is required 
+        - Row-level
+            -InnoDB
+        - Table-level
+            -MyISAM 
+
+
+MyISAM
+- Non-Transactional 
+- Fast Search 
+- Table level locking
+- NOT ACID compliant
+
+InnoDB
+- Transactional
+- Row-level locking
+- ACID compliant 
+
+Memory
+- Non-transactional
+- Table-level locking
+- Very fast 
+- NOT ACID compliant 
+
+
+Utilities Shared Components
+------------------
+This manages MySQL enviroment inlcuding replication 
+
+Catalog Manager
+Memory Manager 
+Admin Monitoring Utilites 
+Replication Service
+Batch Processing Utilities 

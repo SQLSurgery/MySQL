@@ -1,0 +1,20 @@
+MySQL ACID
+
+ACID is foundational concept for any RDMS guranteeing the reliability of a database system that meets the criteria
+
+Automicity
+ - All or nothing 
+Conistency of data
+ - Database is protected from actions that may corrupt data 
+Isolation of actions
+ - Multiple actions occuring in parallel will not impact each other 
+Durability of data 
+ - All committed data is safe
+
+ With various storage engine options in MySQL only Innodb is ACID compliant
+  - All transaction statements are stored in memory buffer only committed then written to log and disk. 
+  - The binary log and the locking system ensure consistency of the data
+  - Locks ensure data integrity by isolating transactions
+  - Database changes are recorded in the binary log file providing durability.  
+
+  
