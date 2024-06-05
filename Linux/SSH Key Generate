@@ -1,0 +1,35 @@
+To ways to create SSH keys
+
+--Putty
+--Terminal
+
+-- Public Key and Private Key. 
+-- SSH or Secured Shell is a cryptographic tool used in secure data communication and RSA key is a type of encryption key used in a the RSA algorithm, which is a widely used method for secure data transmission.
+-- User would need private key to decrypt when authenticating.
+
+
+-- Option 1 - Putty
+--Download PuttyGen
+puttygen.com/download-putty
+-- Number of bytes two types 4096 or 2048. The 4096 more stronger as has more bytes. 
+-- Use type of key to generate then Generate.
+-- Move mouse to generate randomise of key.
+-- Key passphrase - extra layer of security for the keys, would be required when authenticating.
+-- Save Public and Private Key
+
+
+-- Option 2 - Terminal
+
+-- Use PowerShell or CMD 
+
+shh-keygen Or 
+shh-keygen -t rsa -b 4096
+
+/*
+-t type of key
+-b number of bytes 4096 or 2048 
+*/
+
+--Once shh-keygen is run it would give options where to save the keys.
+-- File extension with .pub is public and other is the private key. 
+-- Can view in code editor tool or notepad to see the generated key. 
