@@ -7,4 +7,8 @@ MySQL uses a binary log to record "Events" that change the database
  - Using the binary log does effect database performance 
     - Benefits outweigh the costs 
 
+Would have to start MySQL to start with binary log intialised
+mysql start --log-bin
 
+show binary logs; 
+It is controlled by .cnf file and can define location of the binary log file within this. 
