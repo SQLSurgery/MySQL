@@ -33,3 +33,4 @@ shh-keygen -t rsa -b 4096
 --Once shh-keygen is run it would give options where to save the keys.
 -- File extension with .pub is public and other is the private key. 
 -- Can view in code editor tool or notepad to see the generated key. 
+-- Share your public key and keep the private key to yourself in secure location, the private key would be used to connect to servers using SSH. 
