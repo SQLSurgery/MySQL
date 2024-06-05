@@ -8,6 +8,3 @@ MySQL uses a binary log to record "Events" that change the database
     - Benefits outweigh the costs 
 
 
-show global variables like '%isolation%';
-set global transaction isolation level read uncommited;
-    

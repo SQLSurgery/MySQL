@@ -9,3 +9,6 @@ Repeatable Read - Uncommited changes cannot be read by the session; no other ses
 Read Commited - Uncommited data changes cannot be read by other sessions
 Read Uncommited - Sessions can read data that is being changed by other sessions before those changes are commited. 
 
+show global variables like '%isolation%';
+set global transaction isolation level read uncommited;
+set session transaction isolation level read uncommited;
