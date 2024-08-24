@@ -5,5 +5,7 @@
 
 **Syntax**
 mysqlsh > 
-```>\connect_mysql <username>@server:port;```
+```
+  >\connect_mysql <username>@server:port;
+```
 
